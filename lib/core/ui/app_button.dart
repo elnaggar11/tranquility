@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tharad/core/ui/app_image.dart';
+import 'package:tranquility/core/ui/app_image.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton({
