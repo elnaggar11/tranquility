@@ -12,6 +12,7 @@ class AppButton extends StatelessWidget {
     this.image,
     this.verticalPadding = 20,
     this.isGradient = false,
+    this.isFingerPrint = false,
   });
   final String text;
   final void Function()? onTap;
@@ -20,6 +21,8 @@ class AppButton extends StatelessWidget {
   final String? image;
   final double verticalPadding;
   final bool isGradient;
+  final bool isFingerPrint;
+
   @override
   Widget build(BuildContext context) {
     if (isGradient) {
@@ -45,24 +48,51 @@ class AppButton extends StatelessWidget {
         ),
       );
     } else {
-      return FilledButton(
-        style: ButtonStyle(backgroundColor: WidgetStatePropertyAll(Colors.red)),
-        onPressed: onTap,
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: verticalPadding.h),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                AppImage(image: image ?? ''),
-                Text(
-                  text,
-                  style: TextStyle(color: Colors.white, fontSize: fontSize.sp),
+      return Row(
+        children: [
+          if (isFingerPrint)
+            Container(
+              height: 62.h,
+              width: 56.w,
+              decoration: BoxDecoration(
+                color: Color(0x2842431A),
+                borderRadius: BorderRadius.circular(8.r),
+              ),
+              child: AppImage(image: 'finger.svg'),
+            ),
+          SizedBox(width: 8.w),
+          Expanded(
+            child: FilledButton(
+              style: ButtonStyle(
+                backgroundColor: WidgetStatePropertyAll(color),
+                shape: WidgetStatePropertyAll(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
                 ),
-              ],
+              ),
+              onPressed: onTap,
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(vertical: verticalPadding.h),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      AppImage(image: image ?? ''),
+                      Text(
+                        text,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: fontSize.sp,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
           ),
-        ),
+        ],
       );
     }
   }

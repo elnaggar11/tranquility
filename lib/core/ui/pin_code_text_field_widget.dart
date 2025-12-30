@@ -12,22 +12,24 @@ class PinCodeTextFieldWidget extends StatelessWidget {
       length: 4,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       autoDismissKeyboard: true,
-      animationType: AnimationType.slide,
+      animationType: AnimationType.none,
       keyboardType: TextInputType.number,
 
       cursorColor: Colors.grey,
       pinTheme: PinTheme(
         shape: PinCodeFieldShape.box,
-        activeFillColor: Colors.white,
+
+        activeFillColor: Colors.grey,
         selectedFillColor: Colors.grey,
         inactiveFillColor: Colors.grey,
-        activeColor: Colors.grey.shade300,
-        selectedColor: Colors.grey.shade300,
-        inactiveColor: Colors.grey.shade300,
+        activeColor: Colors.grey,
+        selectedColor: Colors.grey,
+
+        inactiveColor: Color(0x4042434A),
         fieldHeight: 60.h,
         fieldWidth: 83.5.w,
         borderRadius: BorderRadius.circular(8.r),
-        borderWidth: 1.r,
+        borderWidth: 5,
       ),
     );
   }
