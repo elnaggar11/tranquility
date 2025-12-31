@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ThemeData theme() {
   return ThemeData(
-    fontFamily: 'tajawal',
+    fontFamily: 'inter',
     scaffoldBackgroundColor: Color(0xffF5F5F5),
     colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff265355)),
     useMaterial3: true,
@@ -29,10 +29,9 @@ ThemeData theme() {
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         textStyle: WidgetStateProperty.all(
           TextStyle(
-            fontSize: 12.sp,
-            fontWeight: FontWeight.w500,
-            color: Color(0xff42867B),
-            fontFamily: 'tajawal',
+            fontSize: 18.sp,
+            fontWeight: FontWeight.w700,
+            color: Color(0xffFFFFFF),
           ),
         ),
       ),

@@ -13,8 +13,10 @@ class SplashView extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            AppButton(color: Color(0xff284243)),
+            AppButton(color: Color(0xff284243), text: 'fdsa'),
+            AppInput(isGenderSelection: true),
             AppInput(),
+            Text('gdsssssss'),
           ],
         ),
       ),

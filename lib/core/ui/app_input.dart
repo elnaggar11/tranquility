@@ -12,11 +12,13 @@ class AppInput extends StatefulWidget {
     this.withCountryCode = false,
     this.isSuffix = false,
     this.textInputAction = TextInputAction.next,
+    this.isGenderSelection = false,
   });
   final String? suffixIcon, hintText, label;
   final bool withCountryCode;
   final bool isSuffix;
   final TextInputAction textInputAction;
+  final bool isGenderSelection;
 
   @override
   State<AppInput> createState() => _AppInputState();
@@ -24,7 +26,10 @@ class AppInput extends StatefulWidget {
 
 class _AppInputState extends State<AppInput> {
   late int currentCuntryIndex;
+  int currentGender = 0;
+
   final list = [10, 20, 30, 40];
+  final genderList = ['Male', 'Female'];
   bool isHidden = true;
   @override
   void initState() {
@@ -68,39 +73,74 @@ class _AppInputState extends State<AppInput> {
                 ),
               ),
             ),
+          widget.isGenderSelection == false
+              ? Expanded(
+                  child: TextFormField(
+                    textInputAction: widget.textInputAction,
+                    obscureText: isHidden && widget.isSuffix,
+                    decoration: InputDecoration(
+                      labelText: widget.label,
 
-          Expanded(
-            child: TextFormField(
-              textInputAction: widget.textInputAction,
-              obscureText: isHidden && widget.isSuffix,
-              decoration: InputDecoration(
-                labelText: widget.label,
+                      hintText: widget.hintText,
+                      suffixIcon: widget.isSuffix
+                          ? Padding(
+                              padding: EdgeInsets.all(12.r),
+                              child: AppImage(
+                                image: 'password_view.json',
+                                height: 24.h,
+                                width: 24.w,
 
-                hintText: widget.hintText,
-                suffixIcon: widget.isSuffix
-                    ? Padding(
-                        padding: EdgeInsets.all(12.r),
-                        child: AppImage(
-                          image: 'password_view.json',
-                          height: 24.h,
-                          width: 24.w,
+                                onLottieClicked: () {
+                                  setState(() {
+                                    isHidden = !isHidden;
+                                  });
+                                },
+                              ),
+                            )
+                          : widget.suffixIcon != null
+                          ? AppImage(
+                              image: widget.suffixIcon!,
+                              boxFit: BoxFit.scaleDown,
+                            )
+                          : null,
+                    ),
+                  ),
+                )
+              : Expanded(
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: Color(0xffEAEDEC),
+                      borderRadius: BorderRadius.circular(8.r),
 
-                          onLottieClicked: () {
-                            setState(() {
-                              isHidden = !isHidden;
-                            });
-                          },
+                      border: Border.all(
+                        color: Theme.of(
+                          context,
+                        ).inputDecorationTheme.enabledBorder!.borderSide.color,
+                      ),
+                    ),
+                    child: DropdownButtonHideUnderline(
+                      child: DropdownButton<int>(
+                        isExpanded: true,
+                        value: currentGender,
+                        items: List.generate(
+                          genderList.length,
+                          (index) => DropdownMenuItem<int>(
+                            value: index,
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 16.r),
+                              child: Text(genderList[index]),
+                            ),
+                          ),
                         ),
-                      )
-                    : widget.suffixIcon != null
-                    ? AppImage(
-                        image: widget.suffixIcon!,
-                        boxFit: BoxFit.scaleDown,
-                      )
-                    : null,
-              ),
-            ),
-          ),
+                        onChanged: (value) {
+                          setState(() {
+                            currentGender = value!;
+                          });
+                        },
+                      ),
+                    ),
+                  ),
+                ),
         ],
       ),
     );
