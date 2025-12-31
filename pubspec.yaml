@@ -86,8 +86,8 @@ flutter:
   fonts:
     - family: inter
       fonts:
-        - asset: assets/fonts/inter.ttf
-    - family: MySteryQuest
+        - asset: asMySteryQuestsets/fonts/inter.ttf
+    - family: 
       fonts:
         - asset: assets/fonts/my_stery_quest.ttf  
 

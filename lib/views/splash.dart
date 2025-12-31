@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tranquility/core/ui/app_button.dart';
-import 'package:tranquility/core/ui/app_input.dart';
-import 'package:tranquility/core/ui/pin_code_text_field_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
@@ -9,20 +7,33 @@ class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('ccccccc')),
-      body: Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            AppButton(text: 'button'),
-            AppInput(isGenderSelection: true),
-            AppInput(),
-            AppButton(isGradient: true, text: 'fffffffff'),
-            Text('gdsssssss'),
-            PinCodeTextFieldWidget(),
-            TextButton(onPressed: () {}, child: Text('ssssss')),
-          ],
+      body: Center(
+        child: Container(
+          width: 360.w,
+          height: 360.h,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(200.r),
+            color: Colors.grey,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Tranquility',
+                style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                  fontSize: 48.sp,
+                  fontFamily: 'MySteryQuest',
+                ),
+              ),
+              Text(
+                'Together Towards Tranquility',
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontWeight: FontWeight.w400,
+                  color: Color(0xff284243),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
