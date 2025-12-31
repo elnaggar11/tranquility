@@ -1,39 +1,91 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-ThemeData theme() {
+ThemeData theme(BuildContext context) {
   return ThemeData(
     fontFamily: 'inter',
     scaffoldBackgroundColor: Color(0xffF5F5F5),
-    colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff265355)),
+    // colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff265355)),
     useMaterial3: true,
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.white,
       elevation: 0,
       centerTitle: true,
       titleTextStyle: TextStyle(
-        fontSize: 16.sp,
-        fontWeight: FontWeight.w600,
-        color: Color(0xffFFFFFF),
+        fontSize: 24.sp,
+        fontWeight: FontWeight.bold,
+        color: Colors.black,
       ),
       iconTheme: IconThemeData(color: Colors.white, size: 16.sp),
     ),
+
     textTheme: TextTheme(
-      bodyMedium: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w500),
+      /// bigest font in app
+      headlineLarge: TextStyle(
+        fontSize: 34.sp,
+        fontWeight: FontWeight.w400,
+        color: Color(0xff284243),
+      ),
+
+      /// midium titles in app
+      headlineMedium: TextStyle(
+        fontSize: 32.sp,
+        fontWeight: FontWeight.w700,
+        color: Colors.black,
+      ),
+
+      /// small headline font style
+      headlineSmall: TextStyle(
+        fontSize: 24.sp,
+        fontWeight: FontWeight.w400,
+        color: Colors.black,
+      ),
+
+      /// use with headline font
       bodyLarge: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
+
+      /// most useage font in app
+      bodyMedium: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w400),
+
+      /// help titles font
+      bodySmall: TextStyle(),
+
+      /// Button font style
+      labelLarge: TextStyle(
+        fontSize: 18.sp,
+        fontWeight: FontWeight.w500,
+        color: Colors.white,
+      ),
+
+      /// lable up the button
+      labelMedium: TextStyle(),
+
+      /// the most small font style
+      labelSmall: TextStyle(
+        fontSize: 40.sp,
+        fontWeight: FontWeight.w400,
+        color: Colors.white,
+      ),
+    ),
+    filledButtonTheme: FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        foregroundColor: Colors.white,
+
+        textStyle: TextStyle(
+          fontSize: 18.sp,
+          fontWeight: FontWeight.w500,
+          color: Colors.white,
+        ),
+        backgroundColor: Color(0xff284243),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
+      ),
     ),
     textButtonTheme: TextButtonThemeData(
-      style: ButtonStyle(
-        padding: WidgetStateProperty.all(EdgeInsets.zero),
-        minimumSize: WidgetStateProperty.all(Size.zero),
+      style: TextButton.styleFrom(
+        padding: EdgeInsets.all(0),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        textStyle: WidgetStateProperty.all(
-          TextStyle(
-            fontSize: 18.sp,
-            fontWeight: FontWeight.w700,
-            color: Color(0xffFFFFFF),
-          ),
-        ),
+        foregroundColor: Color(0xff284243),
+        textStyle: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w700),
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(

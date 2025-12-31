@@ -9,27 +9,26 @@ class PinCodeTextFieldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return PinCodeTextField(
       appContext: context,
+      enableActiveFill: false,
       length: 4,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       autoDismissKeyboard: true,
-      animationType: AnimationType.none,
+      animationType: AnimationType.scale,
       keyboardType: TextInputType.number,
-
       cursorColor: Colors.grey,
+      backgroundColor: Colors.transparent,
       pinTheme: PinTheme(
         shape: PinCodeFieldShape.box,
-
-        activeFillColor: Colors.grey,
-        selectedFillColor: Colors.grey,
-        inactiveFillColor: Colors.grey,
-        activeColor: Colors.grey,
-        selectedColor: Colors.grey,
-
-        inactiveColor: Color(0x4042434A),
+        selectedFillColor: Theme.of(context).colorScheme.surface,
+        activeFillColor: Theme.of(context).colorScheme.surface,
+        inactiveFillColor: Theme.of(context).colorScheme.surface,
+        inactiveColor: Theme.of(context).colorScheme.outline,
+        selectedColor: Theme.of(context).colorScheme.outline,
+        activeColor: Theme.of(context).colorScheme.outline,
         fieldHeight: 60.h,
         fieldWidth: 83.5.w,
         borderRadius: BorderRadius.circular(8.r),
-        borderWidth: 5,
+        borderWidth: 1.5,
       ),
     );
   }

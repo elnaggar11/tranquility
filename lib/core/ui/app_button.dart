@@ -7,8 +7,6 @@ class AppButton extends StatelessWidget {
     super.key,
     this.text = '',
     this.onTap,
-    this.color = Colors.red,
-    this.fontSize = 16,
     this.image,
     this.verticalPadding = 20,
     this.isGradient = false,
@@ -16,8 +14,6 @@ class AppButton extends StatelessWidget {
   });
   final String text;
   final void Function()? onTap;
-  final Color? color;
-  final double fontSize;
   final String? image;
   final double verticalPadding;
   final bool isGradient;
@@ -39,11 +35,7 @@ class AppButton extends StatelessWidget {
           child: Text(
             text,
             textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 12,
-              fontWeight: FontWeight.bold,
-            ),
+            style: Theme.of(context).textTheme.labelLarge,
           ),
         ),
       );
@@ -60,18 +52,10 @@ class AppButton extends StatelessWidget {
               ),
               child: AppImage(image: 'finger.svg'),
             ),
-          SizedBox(width: 8.w),
+          if (isFingerPrint) SizedBox(width: 8.w),
           Expanded(
             child: FilledButton(
-              style: ButtonStyle(
-                backgroundColor: WidgetStatePropertyAll(color),
-                shape: WidgetStatePropertyAll(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.r),
-                  ),
-                ),
-              ),
-              onPressed: onTap,
+              onPressed: onTap ?? () {},
               child: Center(
                 child: Padding(
                   padding: EdgeInsets.symmetric(vertical: verticalPadding.h),
@@ -79,13 +63,7 @@ class AppButton extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       AppImage(image: image ?? ''),
-                      Text(
-                        text,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: fontSize.sp,
-                        ),
-                      ),
+                      Text(text),
                     ],
                   ),
                 ),

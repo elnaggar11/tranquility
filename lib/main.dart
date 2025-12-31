@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           navigatorKey: navKey,
-          theme: theme(),
+          theme: theme(context),
           home: SplashView(),
         );
       },
