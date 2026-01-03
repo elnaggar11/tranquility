@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/core/logic/helper_methods.dart';
 import 'package:tranquility/core/logic/theme.dart';
-import 'package:tranquility/views/splash.dart';
+import 'package:tranquility/views/onboarding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           navigatorKey: navKey,
-          theme: theme(context),
-          home: SplashView(),
+          theme: theme(),
+          home: OnboardingView(),
         );
       },
     );

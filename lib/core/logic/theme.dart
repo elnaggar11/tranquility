@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-ThemeData theme(BuildContext context) {
+ThemeData theme() {
   return ThemeData(
     fontFamily: 'inter',
+    primaryColor: Color(0xff284243),
     scaffoldBackgroundColor: Color(0xffF5F5F5),
-    // colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff265355)),
+    colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff265355)),
     useMaterial3: true,
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.white,
@@ -42,10 +43,14 @@ ThemeData theme(BuildContext context) {
       ),
 
       /// use with headline font
-      bodyLarge: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
+      bodyLarge: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w400),
 
       /// most useage font in app
-      bodyMedium: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w400),
+      bodyMedium: TextStyle(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w400,
+        color: Colors.black,
+      ),
 
       /// help titles font
       bodySmall: TextStyle(),
