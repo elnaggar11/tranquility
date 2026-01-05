@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/core/ui/app_button.dart';
 import 'package:tranquility/core/ui/app_image.dart';
+import 'package:tranquility/core/ui/appbar.dart';
 import 'package:tranquility/core/ui/pin_code_text_field_widget.dart';
 
 class OtpView extends StatelessWidget {
@@ -10,6 +11,7 @@ class OtpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: Appbar(),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 24.w),

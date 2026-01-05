@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tranquility/core/logic/helper_methods.dart';
 import 'package:tranquility/core/ui/app_button.dart';
 import 'package:tranquility/core/ui/app_image.dart';
 import 'package:tranquility/core/ui/app_input.dart';
+import 'package:tranquility/views/auth/otp_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -45,7 +47,13 @@ class LoginView extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 24.h),
-              AppButton(isFingerPrint: true, text: 'Log In'),
+              AppButton(
+                isFingerPrint: true,
+                text: 'Log In',
+                onTap: () {
+                  navigateTo(OtpView());
+                },
+              ),
               SizedBox(height: 30.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
