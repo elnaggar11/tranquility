@@ -111,7 +111,6 @@ class _AppInputState extends State<AppInput> {
                     decoration: BoxDecoration(
                       color: Color(0xffEAEDEC),
                       borderRadius: BorderRadius.circular(8.r),
-
                       border: Border.all(
                         color: Theme.of(
                           context,

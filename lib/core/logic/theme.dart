@@ -43,7 +43,7 @@ ThemeData theme() {
       ),
 
       /// use with headline font
-      bodyLarge: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w400),
+      bodyLarge: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w500),
 
       /// most useage font in app
       bodyMedium: TextStyle(
@@ -55,11 +55,11 @@ ThemeData theme() {
       /// help titles font
       bodySmall: TextStyle(),
 
-      /// Button font style
+      /// With text button
       labelLarge: TextStyle(
         fontSize: 18.sp,
         fontWeight: FontWeight.w500,
-        color: Colors.white,
+        color: Colors.black,
       ),
 
       /// lable up the button
@@ -67,7 +67,7 @@ ThemeData theme() {
 
       /// the most small font style
       labelSmall: TextStyle(
-        fontSize: 40.sp,
+        fontSize: 12.sp,
         fontWeight: FontWeight.w400,
         color: Colors.white,
       ),
@@ -90,17 +90,17 @@ ThemeData theme() {
         padding: EdgeInsets.all(0),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         foregroundColor: Color(0xff284243),
-        textStyle: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w700),
+        textStyle: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: Color(0xffEAEDEC),
-      contentPadding: EdgeInsets.symmetric(horizontal: 18.h),
+      contentPadding: EdgeInsets.symmetric(horizontal: 18.h, vertical: 12),
       suffixIconColor: const Color(0xff8E8EA9),
       hintStyle: TextStyle(
-        color: Color(0xff265355),
-        fontSize: 10.sp,
+        color: Colors.black,
+        fontSize: 16.sp,
         fontWeight: FontWeight.w400,
       ),
       border: outLineInputBorder(color: Color(0xffF0E6DE)),
