@@ -44,9 +44,9 @@ class LoginView extends StatelessWidget {
                   child: Text('Forget Password?'),
                 ),
               ),
-              SizedBox(height: 28.h),
+              SizedBox(height: 24.h),
               AppButton(isFingerPrint: true, text: 'Log In'),
-              SizedBox(height: 40.h),
+              SizedBox(height: 30.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
