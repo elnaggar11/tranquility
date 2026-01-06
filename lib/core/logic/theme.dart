@@ -96,7 +96,7 @@ ThemeData theme() {
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: Color(0xffEAEDEC),
-      contentPadding: EdgeInsets.symmetric(horizontal: 18.h, vertical: 12),
+      contentPadding: EdgeInsets.symmetric(horizontal: 18.r, vertical: 12.r),
       suffixIconColor: const Color(0xff8E8EA9),
       hintStyle: TextStyle(
         color: Colors.black,

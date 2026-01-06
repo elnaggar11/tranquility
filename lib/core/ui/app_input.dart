@@ -26,7 +26,7 @@ class AppInput extends StatefulWidget {
 
 class _AppInputState extends State<AppInput> {
   late int currentCuntryIndex;
-  int currentGender = 0;
+  int currentGenderIndex = 0;
 
   final list = [10, 20, 30, 40];
   final genderList = ['Male', 'Female'];
@@ -80,7 +80,6 @@ class _AppInputState extends State<AppInput> {
                     obscureText: isHidden && widget.isSuffix,
                     decoration: InputDecoration(
                       labelText: widget.label,
-
                       hintText: widget.hintText,
                       suffixIcon: widget.isSuffix
                           ? Padding(
@@ -120,20 +119,26 @@ class _AppInputState extends State<AppInput> {
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton<int>(
                         isExpanded: true,
-                        value: currentGender,
+                        value: currentGenderIndex,
                         items: List.generate(
                           genderList.length,
                           (index) => DropdownMenuItem<int>(
                             value: index,
                             child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 16.r),
-                              child: Text(genderList[index]),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20.r,
+                                vertical: 12.r,
+                              ),
+                              child: Text(
+                                genderList[index],
+                                style: Theme.of(context).textTheme.bodyMedium,
+                              ),
                             ),
                           ),
                         ),
                         onChanged: (value) {
                           setState(() {
-                            currentGender = value!;
+                            currentGenderIndex = value!;
                           });
                         },
                       ),
