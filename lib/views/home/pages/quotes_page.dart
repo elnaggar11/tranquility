@@ -16,7 +16,6 @@ class QuotesPage extends StatelessWidget {
             height: double.infinity,
             width: double.infinity,
             boxFit: BoxFit.fill,
-
             image: 'quotes_background.jpg',
           ),
           Center(

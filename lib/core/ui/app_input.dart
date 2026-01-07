@@ -13,12 +13,14 @@ class AppInput extends StatefulWidget {
     this.isSuffix = false,
     this.textInputAction = TextInputAction.next,
     this.isGenderSelection = false,
+    this.keyboardType = TextInputType.emailAddress,
   });
   final String? suffixIcon, hintText, label;
   final bool withCountryCode;
   final bool isSuffix;
   final TextInputAction textInputAction;
   final bool isGenderSelection;
+  final TextInputType keyboardType;
 
   @override
   State<AppInput> createState() => _AppInputState();
@@ -76,6 +78,7 @@ class _AppInputState extends State<AppInput> {
           widget.isGenderSelection == false
               ? Expanded(
                   child: TextFormField(
+                    keyboardType: widget.keyboardType,
                     textInputAction: widget.textInputAction,
                     obscureText: isHidden && widget.isSuffix,
                     decoration: InputDecoration(
