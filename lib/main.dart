@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/core/logic/helper_methods.dart';
 import 'package:tranquility/core/logic/theme.dart';
+import 'package:tranquility/core/ui/change_password_view.dart';
 import 'package:tranquility/views/home/view.dart';
 
 void main() {

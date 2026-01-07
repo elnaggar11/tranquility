@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tranquility/core/logic/helper_methods.dart';
 import 'package:tranquility/core/ui/app_button.dart';
 import 'package:tranquility/core/ui/app_image.dart';
 import 'package:tranquility/core/ui/app_input.dart';
 import 'package:tranquility/core/ui/app_upload_image.dart';
 import 'package:tranquility/core/ui/appbar.dart';
+import 'package:tranquility/core/ui/change_password_view.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -46,7 +48,9 @@ class ProfilePage extends StatelessWidget {
             AppButton(text: 'Save'),
             SizedBox(height: 20.h),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                navigateTo(ChangePasswordView(isChangefromProfile: true));
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

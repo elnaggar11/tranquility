@@ -109,7 +109,8 @@ class _AppInputState extends State<AppInput> {
                   ),
                 )
               : Expanded(
-                  child: DecoratedBox(
+                  child: Container(
+                    height: 60,
                     decoration: BoxDecoration(
                       color: Color(0xffEAEDEC),
                       borderRadius: BorderRadius.circular(8.r),
