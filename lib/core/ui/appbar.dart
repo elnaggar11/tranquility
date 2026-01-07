@@ -3,7 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/core/ui/app_image.dart';
 
 class Appbar extends StatelessWidget implements PreferredSizeWidget {
-  const Appbar({super.key, this.isDrawer = false, this.isMenu = false});
+  const Appbar({
+    super.key,
+    this.isDrawer = false,
+    this.isMenu = false,
+    this.title = '',
+  });
+
+  final String title;
   final bool isDrawer;
   final bool isMenu;
   @override
@@ -12,6 +19,13 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       scrolledUnderElevation: 0,
       backgroundColor: Colors.transparent,
+      centerTitle: false,
+      title: Text(
+        title,
+        style: Theme.of(
+          context,
+        ).textTheme.headlineSmall!.copyWith(fontWeight: FontWeight.bold),
+      ),
       actions: [
         isMenu
             ? InkWell(
