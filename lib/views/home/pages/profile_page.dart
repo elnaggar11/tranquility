@@ -5,7 +5,6 @@ import 'package:tranquility/core/ui/app_button.dart';
 import 'package:tranquility/core/ui/app_image.dart';
 import 'package:tranquility/core/ui/app_input.dart';
 import 'package:tranquility/core/ui/app_upload_image.dart';
-import 'package:tranquility/core/ui/appbar.dart';
 import 'package:tranquility/core/ui/change_password_view.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -14,7 +13,6 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Appbar(isDrawer: true, title: 'Edit Profile'),
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 24.r),
         child: Column(

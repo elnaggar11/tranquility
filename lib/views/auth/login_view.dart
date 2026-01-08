@@ -35,7 +35,7 @@ class LoginView extends StatelessWidget {
               SizedBox(height: 16.h),
               AppInput(
                 hintText: '',
-                isSuffix: true,
+                isPassword: true,
                 textInputAction: TextInputAction.done,
               ),
               SizedBox(height: 16.h),

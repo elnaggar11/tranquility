@@ -3,8 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/core/ui/app_image.dart';
 
 class AppUploadImage extends StatelessWidget {
-  const AppUploadImage({super.key, this.isEditProfile = false});
+  const AppUploadImage({
+    super.key,
+    this.isEditProfile = false,
+    this.isDrawer = false,
+  });
   final bool isEditProfile;
+  final bool isDrawer;
 
   @override
   Widget build(BuildContext context) {
@@ -26,20 +31,24 @@ class AppUploadImage extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            bottom: 2,
-            right: 2,
-            child: CircleAvatar(
-              radius: 22.r,
-              backgroundColor: Color(0xff284243),
-              child: IconButton(
-                onPressed: () {},
-                icon: AppImage(
-                  image: isEditProfile ? 'edit_profile.svg' : 'add_icon.svg',
+          isDrawer
+              ? SizedBox.shrink()
+              : Positioned(
+                  bottom: 2,
+                  right: 2,
+                  child: CircleAvatar(
+                    radius: 22.r,
+                    backgroundColor: Color(0xff284243),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: AppImage(
+                        image: isEditProfile
+                            ? 'edit_profile.svg'
+                            : 'add_icon.svg',
+                      ),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-          ),
         ],
       ),
     );

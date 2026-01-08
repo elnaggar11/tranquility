@@ -10,14 +10,14 @@ class AppInput extends StatefulWidget {
     this.hintText,
     this.label,
     this.withCountryCode = false,
-    this.isSuffix = false,
+    this.isPassword = false,
     this.textInputAction = TextInputAction.next,
     this.isGenderSelection = false,
     this.keyboardType = TextInputType.emailAddress,
   });
   final String? suffixIcon, hintText, label;
   final bool withCountryCode;
-  final bool isSuffix;
+  final bool isPassword;
   final TextInputAction textInputAction;
   final bool isGenderSelection;
   final TextInputType keyboardType;
@@ -80,11 +80,11 @@ class _AppInputState extends State<AppInput> {
                   child: TextFormField(
                     keyboardType: widget.keyboardType,
                     textInputAction: widget.textInputAction,
-                    obscureText: isHidden && widget.isSuffix,
+                    obscureText: isHidden && widget.isPassword,
                     decoration: InputDecoration(
                       labelText: widget.label,
                       hintText: widget.hintText,
-                      suffixIcon: widget.isSuffix
+                      suffixIcon: widget.isPassword
                           ? Padding(
                               padding: EdgeInsets.all(12.r),
                               child: AppImage(

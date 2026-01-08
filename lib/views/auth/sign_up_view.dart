@@ -32,10 +32,10 @@ class SignUpView extends StatelessWidget {
               AppInput(isGenderSelection: true),
               SizedBox(height: 16.h),
 
-              AppInput(hintText: 'password', isSuffix: true),
+              AppInput(hintText: 'password', isPassword: true),
               SizedBox(height: 16.h),
 
-              AppInput(hintText: 'Confirm password', isSuffix: true),
+              AppInput(hintText: 'Confirm password', isPassword: true),
               SizedBox(height: 16.h),
               AppButton(text: 'Sign Up'),
               SizedBox(height: 16.h),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/core/ui/app_image.dart';
-import 'package:tranquility/core/ui/appbar.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});
@@ -9,7 +8,6 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Appbar(isDrawer: true, title: 'Chats'),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

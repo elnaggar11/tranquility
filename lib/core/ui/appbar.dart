@@ -28,7 +28,7 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         isMenu
-            ? InkWell(
+            ? GestureDetector(
                 onTap: () {},
                 child: Padding(
                   padding: EdgeInsets.only(right: 11.r),
@@ -39,7 +39,9 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
       ],
       leading: isDrawer
           ? IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
               icon: Icon(Icons.menu, color: Colors.black),
             )
           : InkWell(

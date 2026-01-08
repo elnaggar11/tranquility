@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tranquility/core/ui/app_image.dart';
+import 'package:tranquility/core/ui/appbar.dart';
 import 'package:tranquility/views/home/pages/chat_page.dart';
 import 'package:tranquility/views/home/pages/profile_page.dart';
 import 'package:tranquility/views/home/pages/quotes_page.dart';
+import 'package:tranquility/views/home/widgets/drawer.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -36,6 +38,8 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: Appbar(title: _list[currentIndex].title, isDrawer: true),
+      drawer: AppDrawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Theme.of(context).primaryColor,

@@ -34,18 +34,18 @@ class ChangePasswordView extends StatelessWidget {
                   ),
             isChangefromProfile ? SizedBox.shrink() : SizedBox(height: 28.h),
             if (isChangefromProfile)
-              AppInput(hintText: 'Old Password', isSuffix: true),
+              AppInput(hintText: 'Old Password', isPassword: true),
             isChangefromProfile ? SizedBox(height: 16.h) : SizedBox.shrink(),
             AppInput(
               hintText: isChangefromProfile ? 'New Password' : 'Password',
-              isSuffix: true,
+              isPassword: true,
             ),
             SizedBox(height: 16.h),
             AppInput(
               hintText: isChangefromProfile
                   ? 'Confirm New Password'
                   : 'Confirm Password',
-              isSuffix: true,
+              isPassword: true,
               textInputAction: TextInputAction.done,
             ),
             SizedBox(height: 62.h),
