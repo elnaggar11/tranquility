@@ -14,12 +14,11 @@ class AppInput extends StatefulWidget {
     this.textInputAction = TextInputAction.next,
     this.isGenderSelection = false,
     this.keyboardType = TextInputType.emailAddress,
+    this.isInputContent = false,
   });
   final String? suffixIcon, hintText, label;
-  final bool withCountryCode;
-  final bool isPassword;
+  final bool withCountryCode, isPassword, isGenderSelection, isInputContent;
   final TextInputAction textInputAction;
-  final bool isGenderSelection;
   final TextInputType keyboardType;
 
   @override
@@ -82,6 +81,15 @@ class _AppInputState extends State<AppInput> {
                     textInputAction: widget.textInputAction,
                     obscureText: isHidden && widget.isPassword,
                     decoration: InputDecoration(
+                      alignLabelWithHint: widget.isInputContent ? true : false,
+                      contentPadding: widget.isInputContent
+                          ? EdgeInsets.symmetric(
+                              horizontal: 18.r,
+                              vertical: 60.r,
+                            )
+                          : Theme.of(
+                              context,
+                            ).inputDecorationTheme.contentPadding,
                       labelText: widget.label,
                       hintText: widget.hintText,
                       suffixIcon: widget.isPassword

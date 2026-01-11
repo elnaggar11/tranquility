@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tranquility/core/ui/app_image.dart';
 import 'package:tranquility/core/ui/appbar.dart';
-import 'package:tranquility/views/home/pages/chat_page.dart';
+import 'package:tranquility/views/home/pages/empty_chat_page.dart';
 import 'package:tranquility/views/home/pages/profile_page.dart';
 import 'package:tranquility/views/home/pages/quotes_page.dart';
 import 'package:tranquility/views/home/widgets/drawer.dart';
@@ -18,7 +18,7 @@ class _HomeViewState extends State<HomeView> {
   final _list = [
     _Model(
       icon: 'chat.svg',
-      page: ChatPage(),
+      page: EmptyChatPage(),
       title: 'Chats',
       activeIcon: 'chats_active.svg',
     ),
