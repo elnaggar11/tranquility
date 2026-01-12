@@ -8,18 +8,22 @@ class Appbar extends StatelessWidget implements PreferredSizeWidget {
     this.isDrawer = false,
     this.isMenu = false,
     this.title = '',
+    this.isCenterTitle = false,
+    this.menuTap,
   });
 
   final String title;
   final bool isDrawer;
   final bool isMenu;
+  final bool isCenterTitle;
+  final void Function()? menuTap;
   @override
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
       scrolledUnderElevation: 0,
       backgroundColor: Colors.transparent,
-      centerTitle: false,
+      centerTitle: isCenterTitle ? true : false,
       title: Text(
         title,
         style: Theme.of(
