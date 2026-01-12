@@ -43,7 +43,11 @@ ThemeData theme() {
       ),
 
       /// use with headline font
-      bodyLarge: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w500),
+      bodyLarge: TextStyle(
+        fontSize: 22.sp,
+        fontWeight: FontWeight.w500,
+        color: Color(0xff284243),
+      ),
 
       /// most useage font in app
       bodyMedium: TextStyle(
