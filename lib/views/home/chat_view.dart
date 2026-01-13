@@ -4,45 +4,45 @@ import 'package:tranquility/core/ui/appbar.dart';
 import '../../../core/ui/app_image.dart';
 import '../../../core/ui/app_input.dart';
 
-class ChatView extends StatelessWidget {
+class ChatView extends StatefulWidget {
   const ChatView({super.key});
 
   @override
+  State<ChatView> createState() => _ChatViewState();
+}
+
+class _ChatViewState extends State<ChatView> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Appbar(
-        title: 'About work',
-        isCenterTitle: true,
-        isMenu: true,
-        menuTap: () {},
-      ),
+      appBar: Appbar(title: 'About work', isCenterTitle: true, isMenu: true),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 16.r, vertical: 16.r),
         reverse: true,
         children: [
-          BubbleChat(
+          _BubbleChat(
             message:
                 'I\'m sorry to hear that you\'re feeling upset. If you\'d like, you can share what\'s on your mind, and I\'m here to listen and offer support or guidance if you need it. Remember, it\'s okay to feel upset sometimes, and it\'s important to take care of yourself.',
           ),
           SizedBox(height: 16.h),
-          BubbleChat(message: 'I feel upset', isMyMessage: true),
+          _BubbleChat(message: 'I feel upset', isMyMessage: true),
           SizedBox(height: 16.h),
-          BubbleChat(
+          _BubbleChat(
             message:
                 'Hello! I\'m just a computer program, so I don\'t have feelings in the same way humans do, but I\'m here and ready to assist you. How can I help you today?',
           ),
           SizedBox(height: 16.h),
 
-          BubbleChat(message: 'Hello How are you?', isMyMessage: true),
+          _BubbleChat(message: 'Hello How are you?', isMyMessage: true),
         ],
       ),
-      bottomNavigationBar: _ChatNavgatiorBar(),
+      bottomNavigationBar: _NavBar(),
     );
   }
 }
 
-class _ChatNavgatiorBar extends StatelessWidget {
-  const _ChatNavgatiorBar();
+class _NavBar extends StatelessWidget {
+  const _NavBar();
 
   @override
   Widget build(BuildContext context) {
@@ -69,12 +69,8 @@ class _ChatNavgatiorBar extends StatelessWidget {
   }
 }
 
-class BubbleChat extends StatelessWidget {
-  const BubbleChat({
-    super.key,
-    this.isMyMessage = false,
-    required this.message,
-  });
+class _BubbleChat extends StatelessWidget {
+  const _BubbleChat({this.isMyMessage = false, required this.message});
   final bool isMyMessage;
   final String message;
 
