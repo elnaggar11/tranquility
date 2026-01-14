@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tranquility/core/logic/helper_methods.dart';
 import 'package:tranquility/core/ui/app_image.dart';
 import 'package:tranquility/core/ui/app_upload_image.dart';
+import 'package:tranquility/views/home/about_us_view.dart';
+import 'package:tranquility/views/home/suggestion_view.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -41,9 +44,21 @@ class AppDrawer extends StatelessWidget {
               ],
             ),
           ),
-          _Item(image: 'about_us.svg', title: 'About Us', onTap: () {}),
-          _Item(image: 'star.svg', title: 'Rate Our App'),
-          _Item(image: 'suggestion.svg', title: 'Suggestions'),
+          _Item(
+            image: 'about_us.svg',
+            title: 'About Us',
+            onTap: () {
+              navigateTo(AboutUsView());
+            },
+          ),
+          _Item(image: 'star.svg', title: 'Rate Our App', onTap: () {}),
+          _Item(
+            image: 'suggestion.svg',
+            title: 'Suggestions',
+            onTap: () {
+              navigateTo(SuggestionView());
+            },
+          ),
           _Item(
             image: 'finger.svg',
             title: 'Enable Easy Login',

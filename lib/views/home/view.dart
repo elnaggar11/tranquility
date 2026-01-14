@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tranquility/core/logic/helper_methods.dart';
 import 'package:tranquility/core/ui/app_image.dart';
 import 'package:tranquility/core/ui/appbar.dart';
+import 'package:tranquility/views/home/assistant.dart';
 import 'package:tranquility/views/home/pages/empty_chat_page.dart';
 import 'package:tranquility/views/home/pages/profile_page.dart';
 import 'package:tranquility/views/home/pages/quotes_page.dart';
@@ -41,7 +43,9 @@ class _HomeViewState extends State<HomeView> {
       appBar: Appbar(title: _list[currentIndex].title, isDrawer: true),
       drawer: AppDrawer(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          navigateTo(AssistantView());
+        },
         backgroundColor: Theme.of(context).primaryColor,
         child: AppImage(image: 'flaot_chat.svg'),
       ),

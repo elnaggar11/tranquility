@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tranquility/core/logic/helper_methods.dart';
 import 'package:tranquility/core/ui/app_button.dart';
 import 'package:tranquility/core/ui/app_image.dart';
 import 'package:tranquility/core/ui/app_input.dart';
 import 'package:tranquility/core/ui/appbar.dart';
+import 'package:tranquility/views/home/view.dart';
 
 class AssistantView extends StatelessWidget {
   const AssistantView({super.key});
@@ -48,7 +50,12 @@ class AssistantView extends StatelessWidget {
                   SizedBox(height: 16.h),
                   AppInput(hintText: 'Enter The Title Of Chat'),
                   SizedBox(height: 24.h),
-                  AppButton(text: 'Start Chat'),
+                  AppButton(
+                    text: 'Start Chat',
+                    onTap: () {
+                      navigateTo(HomeView());
+                    },
+                  ),
                 ],
               ),
             ),
