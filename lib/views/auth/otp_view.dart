@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tranquility/core/logic/helper_methods.dart';
 import 'package:tranquility/core/ui/app_button.dart';
 import 'package:tranquility/core/ui/app_image.dart';
 import 'package:tranquility/core/ui/appbar.dart';
 import 'package:tranquility/core/ui/pin_code_text_field_widget.dart';
+import 'package:tranquility/views/auth/login_view.dart';
 
 class OtpView extends StatelessWidget {
   const OtpView({super.key});
@@ -37,7 +39,12 @@ class OtpView extends StatelessWidget {
               SizedBox(height: 36.h),
               PinCodeTextFieldWidget(),
               SizedBox(height: 60.h),
-              AppButton(text: 'Verify'),
+              AppButton(
+                text: 'Verify',
+                onTap: () {
+                  navigateTo(LoginView());
+                },
+              ),
             ],
           ),
         ),

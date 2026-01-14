@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/core/logic/helper_methods.dart';
 import 'package:tranquility/core/logic/theme.dart';
-import 'package:tranquility/views/home/chat_view.dart';
-import 'package:tranquility/views/home/pages/empty_chat_page.dart';
-import 'package:tranquility/views/home/view.dart';
+import 'package:tranquility/views/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +22,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           navigatorKey: navKey,
           theme: theme(),
-          home: ChatView(),
+          home: SplashView(),
         );
       },
     );

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tranquility/core/logic/helper_methods.dart';
 import 'package:tranquility/core/ui/app_button.dart';
 import 'package:tranquility/core/ui/app_image.dart';
 import 'package:tranquility/core/ui/app_input.dart';
 import 'package:tranquility/core/ui/appbar.dart';
+import 'package:tranquility/views/auth/otp_view.dart';
 
 class ForgetPasswordView extends StatelessWidget {
   const ForgetPasswordView({super.key});
@@ -26,7 +28,12 @@ class ForgetPasswordView extends StatelessWidget {
             SizedBox(height: 33.h),
             AppInput(hintText: 'Phone Number'),
             SizedBox(height: 33.h),
-            AppButton(text: 'Forget Password'),
+            AppButton(
+              text: 'Forget Password',
+              onTap: () {
+                navigateTo(OtpView());
+              },
+            ),
           ],
         ),
       ),

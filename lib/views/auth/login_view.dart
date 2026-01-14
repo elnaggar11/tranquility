@@ -4,7 +4,9 @@ import 'package:tranquility/core/logic/helper_methods.dart';
 import 'package:tranquility/core/ui/app_button.dart';
 import 'package:tranquility/core/ui/app_image.dart';
 import 'package:tranquility/core/ui/app_input.dart';
-import 'package:tranquility/views/auth/otp_view.dart';
+import 'package:tranquility/views/auth/forget_password_view.dart';
+import 'package:tranquility/views/auth/sign_up_view.dart';
+import 'package:tranquility/views/home/view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -34,7 +36,7 @@ class LoginView extends StatelessWidget {
               AppInput(hintText: '01022255454'),
               SizedBox(height: 16.h),
               AppInput(
-                hintText: '',
+                hintText: '***********',
                 isPassword: true,
                 textInputAction: TextInputAction.done,
               ),
@@ -42,7 +44,9 @@ class LoginView extends StatelessWidget {
               Align(
                 alignment: AlignmentGeometry.topRight,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    navigateTo(ForgetPasswordView());
+                  },
                   child: Text('Forget Password?'),
                 ),
               ),
@@ -51,7 +55,7 @@ class LoginView extends StatelessWidget {
                 isFingerPrint: true,
                 text: 'Log In',
                 onTap: () {
-                  navigateTo(OtpView());
+                  navigateTo(HomeView(), canPop: false);
                 },
               ),
               SizedBox(height: 30.h),
@@ -62,7 +66,12 @@ class LoginView extends StatelessWidget {
                     'Don’t have an account ? ',
                     style: Theme.of(context).textTheme.labelLarge,
                   ),
-                  TextButton(onPressed: () {}, child: Text('Sign up')),
+                  TextButton(
+                    onPressed: () {
+                      navigateTo(SignUpView());
+                    },
+                    child: Text('Sign up'),
+                  ),
                 ],
               ),
               SizedBox(height: 24.h),

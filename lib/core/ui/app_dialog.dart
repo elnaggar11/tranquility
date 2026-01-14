@@ -23,10 +23,7 @@ class AppDialog extends StatelessWidget {
               children: [
                 Text(
                   'Edit Title',
-                  style: TextStyle(
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: Theme.of(context).textTheme.labelLarge,
                 ),
                 const Spacer(),
                 IconButton(

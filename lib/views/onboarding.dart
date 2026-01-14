@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tranquility/core/logic/helper_methods.dart';
 import 'package:tranquility/core/ui/app_image.dart';
-import 'package:tranquility/views/splash.dart';
+import 'package:tranquility/views/auth/login_view.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
@@ -33,6 +33,13 @@ class _OnboardingViewState extends State<OnboardingView> {
   ];
   PageController controller = PageController();
   int currentIndex = 0;
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +47,12 @@ class _OnboardingViewState extends State<OnboardingView> {
         children: [
           Expanded(
             child: PageView.builder(
+              onPageChanged: (value) {
+                setState(() {
+                  currentIndex = value;
+                });
+              },
+              controller: controller,
               itemCount: _list.length,
               itemBuilder: (BuildContext context, int index) {
                 return _buildOnboarding(
@@ -55,11 +68,18 @@ class _OnboardingViewState extends State<OnboardingView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                TextButton(onPressed: () {}, child: Text('Skip')),
+                currentIndex != 2
+                    ? TextButton(
+                        onPressed: () {
+                          navigateTo(LoginView(), canPop: false);
+                        },
+                        child: Text('Skip'),
+                      )
+                    : SizedBox.shrink(),
                 _buildButton(
                   onTap: () {
                     if (currentIndex == 2) {
-                      navigateTo(SplashView());
+                      navigateTo(LoginView());
                     } else {
                       controller.nextPage(
                         duration: Duration(milliseconds: 500),

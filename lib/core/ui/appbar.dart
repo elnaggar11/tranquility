@@ -62,10 +62,7 @@ class _AppbarState extends State<Appbar> {
                         SizedBox(width: 10.w),
                         Text(
                           'Edit Title',
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],
                     ),
@@ -77,11 +74,8 @@ class _AppbarState extends State<Appbar> {
                         SizedBox(width: 10.w),
                         Text(
                           'delete Title',
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xffFF0000),
-                          ),
+                          style: Theme.of(context).textTheme.bodyMedium!
+                              .copyWith(color: Color(0xffFF0000)),
                         ),
                       ],
                     ),

@@ -37,7 +37,12 @@ class SignUpView extends StatelessWidget {
 
               AppInput(hintText: 'Confirm password', isPassword: true),
               SizedBox(height: 16.h),
-              AppButton(text: 'Sign Up'),
+              AppButton(
+                text: 'Sign Up',
+                onTap: () {
+                  navigateTo(LoginView());
+                },
+              ),
               SizedBox(height: 16.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
